@@ -1,14 +1,18 @@
+import { useState } from "react";
 import "./App.css";
 import { InputForm } from "./components/InputForm";
 import { Title } from "./components/Title";
 import { TodoList } from "./components/TodoList";
 
 function App() {
+  // Todoの状態を管理
+  const [taskList, setTaskList] = useState([]);
+
   return (
     <div className="body">
       <Title />
-      <InputForm />
-      <TodoList />
+      <InputForm taskList={taskList} setTaskList={setTaskList} />
+      <TodoList taskList={taskList} setTaskList={setTaskList} />
     </div>
   );
 }
