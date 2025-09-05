@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 
 export const InputForm = ({ taskList, setTaskList }) => {
-  // 入力した情報を管理
   const [inputText, setInputText] = useState("");
 
-  // 送信後にタスクを追加する関数
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setTaskList([
       ...taskList,
       {
+        id: taskList.length,
         text: inputText,
       },
     ]);
