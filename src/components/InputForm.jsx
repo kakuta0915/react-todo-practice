@@ -11,6 +11,7 @@ export const InputForm = ({ taskList, setTaskList }) => {
       {
         id: taskList.length,
         text: inputText,
+        completed: false,
       },
     ]);
     setInputText("");
